@@ -1,0 +1,34 @@
+fs = require 'fs'
+
+{spawn, exec} = require 'child_process'
+
+build = (src, dest, watch = false) ->
+  args = ['-c', '-m', '-o', dest, src]
+  if watch then args.unshift '-w'
+
+  coffee = spawn 'coffee', args
+  coffee.stderr.on 'data', (data) ->
+    process.stderr.write data.toString()
+  coffee.stdout.on 'data', (data) ->
+    console.log data.toString()
+
+task 'build', 'Build lib/ and lib-test/ from src/ and test/', ->
+  build('src', 'lib')
+  build('test', 'lib-test')
+
+task 'watch', 'Watch src/ and test/ for changes', ->
+  build('src', 'lib', true)
+  build('test', 'lib-test', true)
+
+task "test", "run tests", ->
+  invoke 'build'
+  exec "NODE_ENV=test
+    ./node_modules/.bin/mocha
+    --compilers coffee:coffee-script/register
+    --require coffee-script
+    --recursive
+    --colors
+  ", {maxBuffer: 2048 * 1024 }, (err, output) ->
+    throw err if err
+    console.log output
+

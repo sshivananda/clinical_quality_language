@@ -1,0 +1,6 @@
+src
+lib-test
+test
+Cakefile
+coffeelint.json
+node_modules
