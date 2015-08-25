@@ -18,6 +18,7 @@ module.exports.LibraryManager = class LibraryManager
     data = if @isFile then  @readFromFs(library,version) else @readFromHttp(library,version)
     json = JSON.parse(data)
     lib = new Library(json,@)
+    lib.source = json
     if @options.cache_enabled
       @cache[name] = lib
     lib
