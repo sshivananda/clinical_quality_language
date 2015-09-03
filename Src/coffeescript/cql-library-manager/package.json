@@ -1,6 +1,6 @@
 {
   "name": "cql-library-manager",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An execution framework for the Clinical Quality Language (CQL)",
   "keywords" : ["CQL","HL7", "MITRE", "CQM"],
   "bugs" : {"url" : "https://github.com/cqframework/clinical_quality_language/issues"},
@@ -17,7 +17,7 @@
   "dependencies": {
     "urllib-sync": "^1.1.0",
     "adm-zip" : "^0.4.7",
-    "cql-execution" : "^0.0.1"
+    "cql-execution" : "~0.0.4"
   },
   "main" : "lib/library_manager",
   "directories" : {
