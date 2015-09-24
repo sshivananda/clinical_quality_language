@@ -344,6 +344,112 @@ module.exports['Sum'] = {
                }
             }
          }, {
+            "name" : "not_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Sum",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "has_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Sum",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "unmatched_units_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Min",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "L",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
             "name" : "empty",
             "context" : "Patient",
             "accessLevel" : "Public",
@@ -556,6 +662,81 @@ module.exports['Min'] = {
                   } ]
                }
             }
+         }, {
+            "name" : "not_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Min",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "has_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Min",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "type" : "Negate",
+                     "operand" : {
+                        "value" : 1,
+                        "unit" : "ml",
+                        "type" : "Quantity"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
          } ]
       }
    }
@@ -735,6 +916,74 @@ module.exports['Max'] = {
                      "type" : "Quantity"
                   } ]
                }
+            }
+         }, {
+            "name" : "not_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Max",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 10,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "has_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Max",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
             }
          }, {
             "name" : "empty",
@@ -952,6 +1201,70 @@ module.exports['Avg'] = {
                      "type" : "Quantity"
                   } ]
                }
+            }
+         }, {
+            "name" : "not_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Avg",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "has_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Avg",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
             }
          }, {
             "name" : "empty",
@@ -1202,6 +1515,74 @@ module.exports['Median'] = {
                      "type" : "Quantity"
                   } ]
                }
+            }
+         }, {
+            "name" : "odd_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Median",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "even_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Median",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 6,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
             }
          }, {
             "name" : "empty",
@@ -1527,6 +1908,130 @@ module.exports['Median'] = {
                   } ]
                }
             }
+         }, {
+            "name" : "has_null_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Median",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "asType" : "{urn:hl7-org:elm-types:r1}Quantity",
+                     "type" : "As",
+                     "operand" : {
+                        "type" : "Null"
+                     }
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "dup_vals_even_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Median",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
+         }, {
+            "name" : "dup_vals_odd_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Median",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 6,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
          } ]
       }
    }
@@ -1829,6 +2334,38 @@ module.exports['Variance'] = {
                   } ]
                }
             }
+         }, {
+            "name" : "v_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "Variance",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
          } ]
       }
    }
@@ -1934,6 +2471,38 @@ module.exports['PopulationVariance'] = {
                      "type" : "Quantity"
                   } ]
                }
+            }
+         }, {
+            "name" : "v_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "PopulationVariance",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1.0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2.0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3.0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4.0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5.0,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
             }
          } ]
       }
@@ -2059,6 +2628,38 @@ module.exports['StdDev'] = {
                   } ]
                }
             }
+         }, {
+            "name" : "std_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "StdDev",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
+            }
          } ]
       }
    }
@@ -2182,6 +2783,38 @@ module.exports['PopulationStdDev'] = {
                      "type" : "Quantity"
                   } ]
                }
+            }
+         }, {
+            "name" : "dev_q",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "name" : "PopulationStdDev",
+               "type" : "FunctionRef",
+               "operand" : [ {
+                  "type" : "List",
+                  "element" : [ {
+                     "value" : 1,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 2,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 3,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 4,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  }, {
+                     "value" : 5,
+                     "unit" : "ml",
+                     "type" : "Quantity"
+                  } ]
+               } ]
             }
          } ]
       }
