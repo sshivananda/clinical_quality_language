@@ -21,6 +21,10 @@
     "should": "^4.0.4",
     "coveralls": "^2.11.2"
   },
+  "dependencies" : {
+    "ucum.js" : ""
+    },
+
   "main" : "lib/cql",
   "directories" : {
       "lib" : "lib"
