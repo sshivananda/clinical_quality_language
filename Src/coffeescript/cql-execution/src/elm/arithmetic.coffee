@@ -105,31 +105,17 @@ module.exports.Abs = class Abs extends  Expression
     else
       Math.abs args
 
-  # TODO: Remove functionref when ELM does Floor natively
-module.exports.AbsFunctionRef = class AbsFunctionRef extends FunctionRef
-  constructor: (json) ->
-    super
-    @func = new Abs {
-      "type" : "Abs",
-      "operand" : json.operand[0]
-    }
-
-  exec: (ctx) ->
-    @func.exec(ctx)
 
 module.exports.Negate = class Negate extends Expression
   constructor: (json) ->
     super
 
   exec: (ctx) ->
-
     args = @execArgs(ctx)
     if args?.constructor.name == 'Quantity'
       Quantity.createQuantity(args.value * -1,args.unit)
     else
       args * -1
-
-
 
 
 module.exports.Round = class Round extends  Expression

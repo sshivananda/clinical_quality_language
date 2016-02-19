@@ -5,11 +5,7 @@ module.exports.Uncertainty = class Uncertainty
     if obj instanceof Uncertainty then obj else new Uncertainty(obj)
 
   constructor: (@low = null, @high) ->
-<<<<<<< d079b72f149fc4cf34e871ff60348536505cbd92
-    gt = (a, b) -> if typeof a.after is 'function' then a.after b else a > b
-=======
     gt = (a, b) -> if a.after then a.after b else a > b
->>>>>>> adding in ucum.js library to allow conversion to different quantity unit values as well as math operators between different unit types
     if typeof @high is 'undefined' then @high = @low
     if @low? and @high? and gt(@low, @high) then [@low, @high] = [@high, @low]
 
