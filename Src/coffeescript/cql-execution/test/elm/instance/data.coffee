@@ -10,9 +10,21 @@
 library TestSnippet version '1'
 using QUICK
 context Patient
-define Quantity: Quantity {
+define QuantityA: Quantity {
   unit: 'a',
   value: 12
+}
+
+define CodeA: Code {
+  system: 'http://loinc.org',
+  code: '12345',
+  version: '1',
+  display: 'Test Code'
+}
+
+define ConceptA: Concept {
+  codes: { CodeA },
+  display: 'Test Concept'
 }
 
 define Med : Medication {
@@ -20,7 +32,7 @@ define Med : Medication {
   isBrand: false
 }
 
-define val: Quantity.value
+define val: QuantityA.value
 ###
 
 module.exports['Instance'] = {
@@ -55,7 +67,7 @@ module.exports['Instance'] = {
                }
             }
          }, {
-            "name" : "Quantity",
+            "name" : "QuantityA",
             "context" : "Patient",
             "accessLevel" : "Public",
             "expression" : {
@@ -77,6 +89,68 @@ module.exports['Instance'] = {
                         "value" : "12",
                         "type" : "Literal"
                      }
+                  }
+               } ]
+            }
+         }, {
+            "name" : "CodeA",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "classType" : "{urn:hl7-org:elm-types:r1}Code",
+               "type" : "Instance",
+               "element" : [ {
+                  "name" : "system",
+                  "value" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "http://loinc.org",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "name" : "code",
+                  "value" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "12345",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "name" : "version",
+                  "value" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "1",
+                     "type" : "Literal"
+                  }
+               }, {
+                  "name" : "display",
+                  "value" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Test Code",
+                     "type" : "Literal"
+                  }
+               } ]
+            }
+         }, {
+            "name" : "ConceptA",
+            "context" : "Patient",
+            "accessLevel" : "Public",
+            "expression" : {
+               "classType" : "{urn:hl7-org:elm-types:r1}Concept",
+               "type" : "Instance",
+               "element" : [ {
+                  "name" : "codes",
+                  "value" : {
+                     "type" : "List",
+                     "element" : [ {
+                        "name" : "CodeA",
+                        "type" : "ExpressionRef"
+                     } ]
+                  }
+               }, {
+                  "name" : "display",
+                  "value" : {
+                     "valueType" : "{urn:hl7-org:elm-types:r1}String",
+                     "value" : "Test Concept",
+                     "type" : "Literal"
                   }
                } ]
             }
@@ -111,7 +185,7 @@ module.exports['Instance'] = {
                "path" : "value",
                "type" : "Property",
                "source" : {
-                  "name" : "Quantity",
+                  "name" : "QuantityA",
                   "type" : "ExpressionRef"
                }
             }
