@@ -424,9 +424,9 @@ cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
-coffee-script@^1.12.0:
-  version "1.12.4"
-  resolved "https://registry.yarnpkg.com/coffee-script/-/coffee-script-1.12.4.tgz#fe1bced97fe1fb3927b998f2b45616e0658be1ff"
+coffeescript@^1.12.7:
+  version "1.12.7"
+  resolved "https://registry.yarnpkg.com/coffeescript/-/coffeescript-1.12.7.tgz#e57ee4c4867cf7f606bfc4a0f2d550c0981ddd27"
 
 combine-source-map@~0.7.1:
   version "0.7.2"
