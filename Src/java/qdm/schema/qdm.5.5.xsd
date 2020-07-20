@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="urn:healthit-gov:qdm:v5_5" xmlns:dt="urn:hl7-org:elm-types:r1" targetNamespace="urn:healthit-gov:qdm:v5_5" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:import namespace="urn:hl7-org:elm-types:r1" schemaLocation="..\..\..\cql-lm\schema\elm\types.xsd"/>
+	<xs:import namespace="urn:hl7-org:elm-types:r1" schemaLocation="https://raw.githubusercontent.com/sshivananda/clinical_quality_language/master/Src/cql-lm/schema/elm/types.xsd"/>
 	<xs:complexType name="Identifier">
 		<xs:sequence>
 			<xs:element name="namingSystem" type="dt:String" minOccurs="0" maxOccurs="1"/>
@@ -127,8 +127,8 @@
 	<xs:complexType name="PatientCharacteristic">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype 
-				should document a characteristic of the patient not 
+				Data elements that meet criteria using this datatype
+				should document a characteristic of the patient not
 				represented by one of the more specific Individual Characteristic datatypes.
 			</xs:documentation>
 		</xs:annotation>
@@ -144,7 +144,7 @@
 		<xs:annotation>
 			<xs:documentation>
 				The Patient Characteristic Birthdate data element should document the patient’s date of birth.
-				Note: Patient Characteristic Birthdate is fixed to LOINC code 21112-8 (Birth date) and 
+				Note: Patient Characteristic Birthdate is fixed to LOINC code 21112-8 (Birth date) and
 				therefore cannot be further qualified with a value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -159,8 +159,8 @@
 	<xs:complexType name="PatientCharacteristicClinicalTrialParticipant">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype should 
-				document that the patient is a clinical trial participant 
+				Data elements that meet criteria using this datatype should
+				document that the patient is a clinical trial participant
 				for the clinical trial indicated by the QDM category and its corresponding value set.
 				Timing: The Relevant Period addresses:
 					startTime – The time the clinical trial began
@@ -179,8 +179,8 @@
 	<xs:complexType name="PatientCharacteristicEthnicity">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype 
-				should document that the patient has one or more of the 
+				Data elements that meet criteria using this datatype
+				should document that the patient has one or more of the
 				ethnicities indicated by the QDM category and its corresponding value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -192,7 +192,7 @@
 		<xs:annotation>
 			<xs:documentation>
 				The Patient Characteristic Expired data element should document that the patient is deceased.
-				Note: Patient Characteristic Expired is fixed to SNOMED-CT® code 419099009 (Dead) and 
+				Note: Patient Characteristic Expired is fixed to SNOMED-CT® code 419099009 (Dead) and
 				therefore cannot be further qualified with a value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -208,8 +208,8 @@
 	<xs:complexType name="PatientCharacteristicPayer">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype should 
-				document that the patient has one or more of the payers 
+				Data elements that meet criteria using this datatype should
+				document that the patient has one or more of the payers
 				indicated by the QDM category and its corresponding value set.
 				Timing: The Relevant Period addresses:
 					startTime – The first day of insurance coverage with the referenced payer
@@ -237,7 +237,7 @@
 	<xs:complexType name="PatientCharacteristicSex">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype should 
+				Data elements that meet criteria using this datatype should
 				document that the patient's sex matches the QDM category and its corresponding value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -307,8 +307,8 @@
 	<xs:complexType name="AllergyIntolerance">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet this criterion address immune-mediated reactions to a 
-				substance such as type 1 hypersensitivity reactions, other allergy-like reactions, 
+				Data elements that meet this criterion address immune-mediated reactions to a
+				substance such as type 1 hypersensitivity reactions, other allergy-like reactions,
 				including pseudo-allergy.
 				Timing: The Prevalence Period references the time from the onset date to the abatement date.
 			</xs:documentation>
@@ -328,7 +328,7 @@
 	<xs:complexType name="AssessmentPerformed">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet criteria using this datatype should 
+				Data elements that meet criteria using this datatype should
 				document completion of the assessment indicated by the QDM category and its corresponding value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -352,9 +352,9 @@
 	<xs:complexType name="AssessmentRecommended">
 		<xs:annotation>
 			<xs:documentation>
-				Data elements that meet this criteria using this datatype should document 
-				a recommendation for a request by a clinician or appropriately licensed 
-				care provider to a patient or an appropriate provider or organization to 
+				Data elements that meet this criteria using this datatype should document
+				a recommendation for a request by a clinician or appropriately licensed
+				care provider to a patient or an appropriate provider or organization to
 				perform an assessment indicated by the QDM category and its corresponding value set.
 			</xs:documentation>
 		</xs:annotation>
@@ -873,7 +873,7 @@
 				Timing: The Relevant Period addresses:
 					startTime – When the laboratory test is initiated (i.e., the time the specimen collection begins)
 					stopTime – when the laboratory test is completed (i.e., the time the specimen collection ends)
-				Note – the time that the result report is available is a separate 
+				Note – the time that the result report is available is a separate
 				attribute than the time of the study (specimen collection)
 			</xs:documentation>
 		</xs:annotation>
@@ -932,7 +932,7 @@
 				for the time frame
 				indicated by the timing relationships.
 				Timing: The Relevant Period addresses:
-					startTime - when the medication is first known to be used (generally the time of entry on the medication list); 
+					startTime - when the medication is first known to be used (generally the time of entry on the medication list);
 					stopTime - when the medication is discontinued (generally the time discontinuation is recorded on the medication list)
 			</xs:documentation>
 		</xs:annotation>
@@ -959,8 +959,8 @@
 				corresponding value set was actually administered to
 				the patient.
 				Timing: The Relevant Period addresses:
-					startTime - when a single medication administration event starts (e.g., the initiation of an intravenous infusion, or administering a pill or IM injection to a patient); 
-					stopTime - when a single medication administration event ends (e.g., the end time of the intravenous infusion, or the administration of a pill or IM injection is completed - for pills and IM injections, the start and stop times are the same) 
+					startTime - when a single medication administration event starts (e.g., the initiation of an intravenous infusion, or administering a pill or IM injection to a patient);
+					stopTime - when a single medication administration event ends (e.g., the end time of the intravenous infusion, or the administration of a pill or IM injection is completed - for pills and IM injections, the start and stop times are the same)
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -1093,7 +1093,7 @@
 				participates (e.g. health insurance plan policy,
 				disease specific policy, health maintenance
 				organization policy, etc.)
-				
+
 				Timing: Participation Period addresses:
 				enrollmentStartdate - The time the patient
 				enrolled in the program
@@ -1147,7 +1147,7 @@
 				its corresponding value set.
 				Timing: The Relevant Period addresses:
 					startTime – The time the physical examination activity begins
-					stopTime – The time the physical examination activity ends	
+					stopTime – The time the physical examination activity ends
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -1222,8 +1222,8 @@
 				the QDM category and its
 				corresponding value set.
 				Timing: The Relevant Period addresses:
-					startTime - the time the procedure begins; 
-					stopTime - the time the procedure is completed 
+					startTime - the time the procedure begins;
+					stopTime - the time the procedure is completed
 			</xs:documentation>
 		</xs:annotation>
 		<xs:complexContent>
@@ -1280,12 +1280,12 @@
 				corresponding value set was actually given to the
 				patient.
 				Timing: The Relevant Period addresses:
-					startTime - when a single substance administration event starts 
-						(e.g., the initiation of an intravenous infusion, or administering a the 
-						substance orally or topically to a patient); 
-					stopTime - when a single substance administration event ends 
-						(e.g., the end time of the intravenous infusion, or the administration 
-						of a substance orally or topically is completed - for oral or topical 
+					startTime - when a single substance administration event starts
+						(e.g., the initiation of an intravenous infusion, or administering a the
+						substance orally or topically to a patient);
+					stopTime - when a single substance administration event ends
+						(e.g., the end time of the intravenous infusion, or the administration
+						of a substance orally or topically is completed - for oral or topical
 						administration, the start and stop times are the same)
 			</xs:documentation>
 		</xs:annotation>
